@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  - let results=[{LunchBox_name:"SweetChicken",LunchBox_price:9,LunchBox_size:"Large"},{LunchBox_name:"SpicyChicken",LunchBox_price:4,LunchBox_size:"Medium"},{LunchBox_name:"ChickenNuggets",LunchBox_price:6,LunchBox_size:"Small"}]
+  div(class="container-fluid")
+  div(class="row")
+   each value,index in results
+    div(class="col-sm-2" onclick=`buy(${index})`)  #{value.LunchBox_name} LunchBox, costs #{value.LunchBox_price }, having Quantity #{value.LunchBox_size}
+   script.
+    function buy(index)
+    {
+      alert(`Your purchased Item ${index+1}`)
+    }
