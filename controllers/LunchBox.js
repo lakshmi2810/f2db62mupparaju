@@ -47,3 +47,16 @@ exports.LunchBox_delete = function (req, res) {
 exports.LunchBox_update_put = function (req, res) {
     res.send('NOT IMPLEMENTED: LunchBox update PUT' + req.params.id);
 };
+
+// VIEWS
+// Handle a show all view
+exports.LunchBox_view_all_Page = async function(req, res) {
+    try{
+    theLunchBoxs = await Costume.find();
+    res.render('LunchBoxs', { title: 'LunchBox Search Results', results: theLunchBoxs });
+    }
+    catch(err){
+    res.status(500);
+    res.send(`{"error": ${err}}`);
+    }
+   };
