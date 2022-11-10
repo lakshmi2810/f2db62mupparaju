@@ -2,11 +2,11 @@ extends layout
 
 block content
   h1= title
-  - let result= results
+  - let result  = results;
   div(class="container-fluid")
   div(class="row")
    each value,index in results
-    div(class="col-sm-2" onclick=`buy(${index})`)  #{value.LunchBox_name} LunchBox, costs #{value.LunchBox_price }, having Quantity #{value.LunchBox_size}
+    div(class="col-sm-2" onclick=`buy(${index})`)  #{value.LunchBox_name}, #{value.LunchBox_price}, #{value.LunchBox_size}
    script.
     function buy(index)
     {
