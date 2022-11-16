@@ -1,0 +1,53 @@
+extends layout 
+ 
+block content 
+  h1= title 
+ 
+  if (toShow == null) 
+    h2 No instance to delete 
+  else 
+    - let LunchBoxid = toShow._id 
+    - let LunchBox_name = toShow.LunchBox_name
+    - let LunchBox_size = toShow.LunchBox_size
+    - let LunchBox_price = toShow.LunchBox_price 
+    - let actionid = "/resource/LunchBox/" + LunchBoxid 
+    script let actionid = "#{actionid}" 
+    div 
+      div.row 
+        div(class='LunchBoxAttr mr-3') LunchBox ID is: 
+        div #{LunchBoxid} 
+      div.row 
+        div(class='LunchBoxAttr mr-3') LunchBox Name is: 
+        div #{LunchBox_name} 
+      div.row 
+        div(class='LunchBoxAttr mr-3') LunchBox Size is: 
+        div #{LunchBox_size} 
+      div.row 
+        div(class='LunchBoxAttr mr-3') LunchBox Price is: 
+        div #{LunchBox_price} 
+ 
+    button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete 
+    button(class="btn btn-secondary m-2" onclick="cancel()") Cancel 
+ 
+  script. 
+    function cancel() { 
+      // Go back to the home page for the LunchBox collection 
+      window.location.href='/LunchBox' 
+    } 
+  script. 
+    function deleteOnid() { 
+      console.log("starting delete") 
+      // delete first 
+      fetch(actionid, { 
+        method: 'DELETE'   
+      }).then((resp) => { 
+        return resp.json(); // or resp.text() or whatever the server sends 
+      }).then((body) => { 
+        alert("Delete succeded") 
+        window.location.href='/LunchBox' 
+        // TODO handle body 
+      }).catch((error) => { 
+        // TODO handle error 
+        alert("Delete failed " + error ) 
+      }); 
+    }

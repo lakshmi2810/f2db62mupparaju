@@ -2,19 +2,19 @@ extends layout
 block content
  h1= title
  - let LunchBoxid = toShow._id
- - let LunchBox_type = toShow.LunchBox_type
- - let LunchBoxcost = toShow.cost
- - let LunchBoxsize = toShow.size
+ - let LunchBox_name = toShow.LunchBox_name
+ - let LunchBox_price  = toShow.LunchBox_price 
+ - let LunchBox_size = toShow.LunchBox_size
  div
  div.row
  div(class='LunchBoxAttr mr-3') LunchBox ID is:
  div #{LunchBoxid}
  div.row
- div(class='LunchBoxAttr mr-3') LunchBox Type is:
- div #{LunchBox_type}
+ div(class='LunchBoxAttr mr-3') LunchBox Name is:
+ div #{LunchBox_name}
+ div.row
+ div(class='LunchBoxAttr mr-3') LunchBox Price is:
+ div #{LunchBox_price}
  div.row
  div(class='LunchBoxAttr mr-3') LunchBox Size is:
- div #{LunchBoxsize}
- div.row
- div(class='LunchBoxAttr mr-3') LunchBox Cost is:
- div #{LunchBoxcost}
+ div #{LunchBox_size}
