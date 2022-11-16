@@ -1,0 +1,20 @@
+extends layout
+block content
+ h1= title
+ - let LunchBoxid = toShow._id
+ - let LunchBox_type = toShow.LunchBox_type
+ - let LunchBoxcost = toShow.cost
+ - let LunchBoxsize = toShow.size
+ div
+ div.row
+ div(class='LunchBoxAttr mr-3') LunchBox ID is:
+ div #{LunchBoxid}
+ div.row
+ div(class='LunchBoxAttr mr-3') LunchBox Type is:
+ div #{LunchBox_type}
+ div.row
+ div(class='LunchBoxAttr mr-3') LunchBox Size is:
+ div #{LunchBoxsize}
+ div.row
+ div(class='LunchBoxAttr mr-3') LunchBox Cost is:
+ div #{LunchBoxcost}
