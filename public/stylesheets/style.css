@@ -11,3 +11,12 @@ a {
   background-color: lightblue;
   width: 150px;
  }
+
+.styling {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  flex-wrap: wrap;
+  background-color: rgb(111, 212, 165);
+  border-radius: 20%;
+}
+ 

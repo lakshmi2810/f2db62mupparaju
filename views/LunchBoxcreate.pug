@@ -3,7 +3,10 @@ extends layout
 block content 
   h1= title 
  
-  form(id='LunchBoxForm', action="/resource/LunchBox", method="POST") 
+  form(id='LunchBoxForm', action="/resource/LunchBox", method="POST",class="styling") 
+    div(class='styling').form-group
+      img(src='/images/a.jpg' alt="lunchbox"  width="100px" height="80px")
+
     div.form-group 
         label.LunchBoxAttr(for='LunchBox_name') LunchBox Name
         input#LunchBox_name(type='text', name='LunchBox_name') 
